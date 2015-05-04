@@ -34,11 +34,12 @@ RUN cd /tmp &&  \
     rm -rf /tmp/WEB-INF
 ADD jenkins.sh $JENKINS_HOME/
 
-VOLUME $JENKINS_HOME
 USER jenkins
 
 ADD installplugins.sh $JENKINS_HOME/
 RUN $JENKINS_HOME/installplugins.sh
+
+VOLUME $JENKINS_HOME
 
 EXPOSE 9999
 EXPOSE 50000
