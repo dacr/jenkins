@@ -29,7 +29,7 @@ UPDATE_LIST=$( $CLI list-plugins | grep -e ')$' | awk '{ print $1 }' );
 if [ -n "$UPDATE_LIST" ] ; then 
   $CLI install-plugin $UPDATE_LIST
 fi
-$CLI install-plugin swarm sbt github deploy -restart
+$CLI install-plugin swarm sbt github deploy gatling -restart
 waitOFF
 waitON
 $CLI list-plugins
