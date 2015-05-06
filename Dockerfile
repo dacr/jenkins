@@ -8,10 +8,10 @@ ENV JENKINS_CLI      $JENKINS_HOME/cli.jar
 RUN curl -SL $JENKINS_URL -o $JENKINS_WAR
 RUN unzip -p $JENKINS_WAR WEB-INF/jenkins-cli.jar > $JENKINS_CLI
 
-#COPY init.groovy /tmp/WEB-INF/init.groovy.d/tcp-slave-angent-port.groovy
-#RUN cd /tmp &&  \
-#    zip -g $JENKINS_WAR WEB-INF/init.groovy.d/tcp-slave-angent-port.groovy && \
-#    rm -rf /tmp/WEB-INF
+COPY init.groovy /tmp/WEB-INF/init.groovy.d/tcp-slave-angent-port.groovy
+RUN cd /tmp &&  \
+    zip -g $JENKINS_WAR WEB-INF/init.groovy.d/tcp-slave-angent-port.groovy && \
+    rm -rf /tmp/WEB-INF
 
 ADD jenkins.sh $JENKINS_HOME/
 
