@@ -1,6 +1,7 @@
 FROM dacr/jenkins-common
 MAINTAINER David Crosson <crosson.david@gmail.com>
 
+
 ENV JENKINS_URL      http://mirrors.jenkins-ci.org/war-stable/latest/jenkins.war
 ENV JENKINS_WAR      $JENKINS_HOME/jenkins.war
 ENV JENKINS_CLI      $JENKINS_HOME/cli.jar
@@ -15,10 +16,11 @@ RUN cd /tmp &&  \
 
 ADD jenkins.sh $JENKINS_HOME/
 
-USER jenkins
-
 ADD installplugins.sh $JENKINS_HOME/
 RUN $JENKINS_HOME/installplugins.sh
+
+RUN chown -R jenkins:jenkins "$JENKINS_HOME"
+USER jenkins
 
 VOLUME $JENKINS_HOME
 
