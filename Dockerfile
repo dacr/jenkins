@@ -15,6 +15,7 @@ RUN cd /tmp &&  \
     rm -rf /tmp/WEB-INF
 
 ADD jenkins.sh $JENKINS_HOME/
+ADD jenkins-bootssh.sh $JENKINS_HOME/
 
 ADD installplugins.sh $JENKINS_HOME/
 RUN $JENKINS_HOME/installplugins.sh
