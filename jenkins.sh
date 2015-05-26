@@ -11,11 +11,6 @@ JENKINS_AJP_PORT=9998
 JENKINS_JMX_PORT=9996
 SSHKEY=$HOME/.ssh/id_rsa
 
-if [ ! -f $SSHKEY ] ; then
-  echo "generating ssh key"
-  ssh-keygen -q -t rsa -f $SSHKEY -N ''
-fi
-
 if [ -z "$JENKINS_WAR" ] ; then
   JENKINS_WAR=$JENKINS_HOME/jenkins.war
 fi
