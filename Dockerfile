@@ -23,8 +23,6 @@ RUN $JENKINS_HOME/installplugins.sh
 RUN chown -R jenkins:jenkins "$JENKINS_HOME"
 USER jenkins
 
-VOLUME $JENKINS_HOME
-
 EXPOSE 9999
 EXPOSE 50000
 
