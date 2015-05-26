@@ -26,5 +26,5 @@ USER jenkins
 EXPOSE 9999
 EXPOSE 50000
 
-ENTRYPOINT [ "$JENKINS_HOME/jenkins-bootssh.sh" ]
+ENTRYPOINT [ $JENKINS_HOME/jenkins-bootssh.sh ]
 
