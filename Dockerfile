@@ -15,16 +15,19 @@ RUN cd /tmp &&  \
     rm -rf /tmp/WEB-INF
 
 ADD jenkins.sh $JENKINS_HOME/
-ADD jenkins-bootssh.sh $JENKINS_HOME/
 
 ADD installplugins.sh $JENKINS_HOME/
 RUN $JENKINS_HOME/installplugins.sh
 
 RUN chown -R jenkins:jenkins "$JENKINS_HOME"
+
+ADD start.sh /start.sh
+RUN chmod a+rx /start.sh
+
 USER jenkins
 
 EXPOSE 9999
 EXPOSE 50000
 
-ENTRYPOINT [ $JENKINS_HOME/jenkins-bootssh.sh ]
+ENTRYPOINT ["/start.sh"]
 
