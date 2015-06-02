@@ -14,10 +14,10 @@ RUN cd /tmp &&  \
     zip -g $JENKINS_WAR WEB-INF/init.groovy.d/tcp-slave-angent-port.groovy && \
     rm -rf /tmp/WEB-INF
 
-ADD jenkins.sh $JENKINS_HOME/
+ADD jenkins.sh /
 
-ADD installplugins.sh $JENKINS_HOME/
-RUN $JENKINS_HOME/installplugins.sh
+ADD installplugins.sh /
+RUN /installplugins.sh
 
 RUN chown -R jenkins:jenkins "$JENKINS_HOME"
 
