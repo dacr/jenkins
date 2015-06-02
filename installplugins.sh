@@ -11,7 +11,7 @@ waitOFF() {
 }
 
 start() {
-  /jenkins.sh --daemon --logfile /tmp/jenkins-init.log
+  /jenkins/jenkins.sh --daemon --logfile /tmp/jenkins-init.log
   waitON
   echo "WE have to wait for jenkins to be really ready... TO BE ENHANCED (wait-node-online is not enough :( )"
   sleep 15

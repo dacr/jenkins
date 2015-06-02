@@ -6,5 +6,5 @@ if [ ! -f $SSHKEY ] ; then
   echo "generating ssh key"
   ssh-keygen -q -t rsa -f $SSHKEY -N ''
 fi
-/jenkins.sh "$@"
+/jenkins/jenkins.sh "$@"
 
