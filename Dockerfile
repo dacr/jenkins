@@ -32,5 +32,5 @@ USER jenkins
 EXPOSE 9999
 EXPOSE 50000
 
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT ["/jenkins/start.sh"]
 
