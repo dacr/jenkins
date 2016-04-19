@@ -18,8 +18,8 @@ RUN cd /tmp &&  \
 
 ADD jenkins.sh /jenkins/
 
-ADD installplugins.sh /jenkins/
-RUN /jenkins/installplugins.sh
+#ADD installplugins.sh /jenkins/
+#RUN /jenkins/installplugins.sh
 
 RUN chown -R jenkins:jenkins "$JENKINS_HOME"
 RUN chown -R jenkins:jenkins /jenkins
